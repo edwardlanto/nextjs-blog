@@ -53,4 +53,7 @@ On the other hand, Static Generation is not a good idea if you cannot pre-render
 In that case, you can use Server-side Rendering. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use client-side JavaScript to populate frequently updated data.
 
 getStaticProps runs at build time in production, and…
-Inside the function, you can fetch external data and send it as props to the page.
+Inside the function, you can fetch external data like an API and send it as props to the page.
+
+SWR
+The team behind Next.js has created a React hook for data fetching called SWR. We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. We won’t cover the details here, but here’s an example usage:
