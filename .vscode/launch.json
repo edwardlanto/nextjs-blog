@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "aws-sam",
+        "request": "direct-invoke",
+        "name": "Desktop:pages/posts/[id].getStaticPaths (nodejs10.x)",
+        "invokeTarget": {
+          "target": "code",
+          "projectRoot": "",
+          "lambdaHandler": "pages/posts/[id].getStaticPaths"
+        },
+        "lambda": {
+          "runtime": "nodejs10.x",
+          "payload": {},
+          "environmentVariables": {}
+        }
+      },
+      {
+        "type": "aws-sam",
+        "request": "direct-invoke",
+        "name": "Desktop:pages/posts/[id].getStaticProps (nodejs12.x)",
+        "invokeTarget": {
+          "target": "code",
+          "projectRoot": "",
+          "lambdaHandler": "pages/posts/[id].getStaticProps"
+        },
+        "lambda": {
+          "runtime": "nodejs12.x",
+          "payload": {},
+          "environmentVariables": {}
+        }
+      },
+      {
+        "type": "node",
+        "request": "attach",
+        "name": "Launch Program",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "port": 9229
+      }
+    ]
+  }

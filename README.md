@@ -1,19 +1,19 @@
-Next.js has a file-system based router built on the concept of pages.
 
+# How does Next Route? 
 When a file is added to the pages directory it's automatically available as a route.
-
 The files inside the pages directory can be used to define most common patterns.
 
-Index routes
-The router will automatically route files named index to the root of the directory.
-
+```
 pages/index.js → /
 pages/blog/index.js → /blog
-
+```
+## What does next do automatically?
 Code splitting and prefetching
 Next.js does code splitting automatically, so each page only loads what’s necessary for that page. That means when the homepage is rendered, the code for other pages is not served initially.
 
+## How does the CSS work?
 Next.js supports CSS Modules using the [name].module.css file naming convention.
+
 
 CSS Modules locally scope CSS by automatically creating a unique class name. This allows you to use the same CSS class name in different files without worrying about collisions.
 
@@ -57,3 +57,13 @@ Inside the function, you can fetch external data like an API and send it as prop
 
 SWR
 The team behind Next.js has created a React hook for data fetching called SWR. We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. We won’t cover the details here, but here’s an example usage:
+
+dangerouslySetInnerHTML is React’s replacement for using innerHTML in the browser DOM. In general, setting HTML from code is risky because it’s easy to inadvertently expose your users to a cross-site scripting (XSS) attack. So, you can set HTML directly from React, but you have to type out dangerouslySetInnerHTML and pass an object with a __html key, to remind yourself that it’s dangerous. For example:
+
+function createMarkup() {
+  return {__html: 'First &middot; Second'};
+}
+
+function MyComponent() {
+  return <div dangerouslySetInnerHTML={createMarkup()} />;
+}
