@@ -7,6 +7,7 @@ The files inside the pages directory can be used to define most common patterns.
 pages/index.js → /
 pages/blog/index.js → /blog
 ```
+
 ## What does next do automatically?
 Code splitting and prefetching
 Next.js does code splitting automatically, so each page only loads what’s necessary for that page. That means when the homepage is rendered, the code for other pages is not served initially.
